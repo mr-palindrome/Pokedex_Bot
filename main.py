@@ -14,7 +14,8 @@ from utils.base import (
 from utils.helper import (
     get_pokemon_details,
     get_pokemon_species,
-    get_pokemon_image_url
+    get_pokemon_image_url,
+    get_coords
 )
 
 bot = telebot.TeleBot(BOT_TOKEN)
@@ -38,7 +39,7 @@ def send_welcome(message):
         "Available commands:\n"
         "/help - Show available commands 📋\n"
         "/pokemon <pokemon_name> - Get details about a Pokémon 🐾\n"
-        "/moveset <pokemon_name> - Get moveset details of a Pokémon 🎯\n"
+        # "/moveset <pokemon_name> - Get moveset details of a Pokémon 🎯\n"
         "/stats <pokemon_name> - Get detailed stats of a Pokémon 📊\n"
         "/top10_little - Get the top 10 rank Pokémon for Little League with their stats 🏆\n"
         "/top10_gl - Get the top 10 rank Pokémon for Great League with their stats 🏆\n"
@@ -359,13 +360,9 @@ def pokemon_rank_command(message):
 def coords_command(message):
     try:
         city_name = message.text.split(" ", 1)[1].strip().title()
-        if city_name in COORDS_DATA:
-            coords = COORDS_DATA[city_name]
 
-            coords_text = f"Coordinates of {city_name}:\n```{coords}```"
-            bot.reply_to(message, coords_text, parse_mode="MarkdownV2")
-        else:
-            bot.reply_to(message, "City not found in the database.")
+        coords_text = f"Coordinates of {city_name}:\n```{get_coords(city_name)}```"
+        bot.reply_to(message, coords_text, parse_mode="MarkdownV2")
     except IndexError:
         bot.reply_to(message, "Please provide a city name after the command.")
 
