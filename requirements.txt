@@ -3,4 +3,5 @@ python-decouple==3.6
 requests==2.31.0
 urllib3==2.0.4
 pymongo==3.12.1
+pymongo[srv]
 pytz==2023.3
