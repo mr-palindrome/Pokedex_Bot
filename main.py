@@ -417,7 +417,7 @@ def current_community_day_command(message):
         # Calculate the end time as current time + 1 hour
 
         response_text = (
-            "Current Spotlight Hour Times\(the time is based upon IST\):\n\n"
+            "Current Community Day Times\(the time is based upon IST\):\n\n"
         )
 
         # Iterate through the cities and their times
