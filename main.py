@@ -61,7 +61,7 @@ def pokedex_command(message):
             message.chat.id, "Searching for Pokémon details... 🔍"
         )
 
-        if pokemon_data := get_pokemon_details(pokemon_name):
+        if pokemon_data := get_pokemon_details(pokemon_name.lower()):
             image_url = pokemon_data["sprites"]["front_default"]
             species_url = pokemon_data["species"]["url"]
             if species_data := get_pokemon_species(species_url):
