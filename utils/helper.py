@@ -1,5 +1,6 @@
 from .base import BASE_URL
-
+import traceback
+import requests
 
 def get_pokemon_details(pokemon_name):
     api_url = f"{BASE_URL}{pokemon_name}/"
@@ -8,6 +9,7 @@ def get_pokemon_details(pokemon_name):
         response = requests.get(api_url)
         return response.json() if response.status_code == 200 else None
     except Exception:
+        print(traceback.format_exc())
         return None
 
 
