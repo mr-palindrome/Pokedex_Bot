@@ -67,6 +67,7 @@ def pokedex_command(message):
             if species_data := get_pokemon_species(species_url):
                 generation = species_data["generation"]["name"]
                 poke_id = pokemon_data["id"]
+                name = pokemon_data['forms'][0]['name']
                 abilities = ", ".join(
                     [
                         ability["ability"]["name"]
