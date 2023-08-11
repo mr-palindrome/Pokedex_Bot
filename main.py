@@ -445,12 +445,12 @@ def current_community_day_command(message):
         bot.reply_to(message, "An error occurred while fetching the current time.")
 
 
-@bot.message_handler(func=lambda message: True)
-def echo_message(message):
-    bot.reply_to(
-        message,
-        "I don't understand that command. Type /help to see available commands.",
-    )
+# @bot.message_handler(func=lambda message: True)
+# def echo_message(message):
+#     bot.reply_to(
+#         message,
+#         "I don't understand that command. Type /help to see available commands.",
+#     )
 
 
 # Run the bot
