@@ -361,8 +361,10 @@ def pokemon_rank_command(message):
 def coords_command(message):
     try:
         city_name = message.text.split(" ", 1)[1].strip().title()
-
-        coords_text = f"Coordinates of {city_name}:\n```{get_coords(city_name)}```"
+        if city_name in COORDS_DATA.keys():
+            coords_text = f"Coordinates of {city_name}:\n```{COORDS_DATA[city_name]}```"
+        else:
+            coords_text = f"Coordinates of {city_name}:\n```{get_coords(city_name)}```"
         bot.reply_to(message, coords_text, parse_mode="MarkdownV2")
     except IndexError:
         bot.reply_to(message, "Please provide a city name after the command.")
