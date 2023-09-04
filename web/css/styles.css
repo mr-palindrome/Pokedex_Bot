@@ -1,0 +1,138 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the background image */
+body {
+    background-image: url('../media/pokedex.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: opacity(0.9);
+}
+
+/* Style the header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: white;
+}
+
+/* Style the main content */
+main {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style the sections */
+.intro, .get-started {
+    margin-bottom: 20px;
+}
+
+.intro h2, .get-started h2 {
+    font-size: 24px;
+    color: #FF4500;
+}
+
+.intro p, .get-started p {
+    font-size: 16px;
+}
+
+/* Style the Telegram button */
+.telegram-button {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #0088cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 20px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+
+.telegram-button:hover {
+    background-color: #005b99;
+}
+
+/* Style the footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.contribute-button, .support-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF4500;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.contribute-button:hover, .support-button:hover {
+    background-color: #D43100;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    /* Change from horizontal to vertical layout for mobile devices */
+
+    /* Center the content vertically */
+    body {
+        justify-content: center;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+
+    /* Adjust the header font size */
+    header h1 {
+        font-size: 24px;
+    }
+
+    /* Add more margin between sections */
+    .intro, .get-started {
+        margin-bottom: 30px;
+    }
+
+    /* Decrease the font size of section headings */
+    .intro h2, .get-started h2 {
+        font-size: 20px;
+    }
+
+    /* Decrease the font size of paragraph text */
+    .intro p, .get-started p {
+        font-size: 14px;
+    }
+
+    /* Center buttons vertically and add margin */
+    .contribute-button, .support-button {
+        margin: 10px auto;
+    }
+}
