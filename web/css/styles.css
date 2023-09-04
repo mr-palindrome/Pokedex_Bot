@@ -7,6 +7,7 @@
 
 /* Set the background image */
 body {
+    padding: 0 2vw;
     background-image: url('../media/pokedex.png');
     background-size: cover;
     background-repeat: no-repeat;
