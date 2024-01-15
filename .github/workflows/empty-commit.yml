@@ -15,7 +15,7 @@ jobs:
         run: git config --global user.email "ndas5144@gmail.com" && git config --global user.name "Nayan Das"
 
       - name: Create empty commit
-        run: git commit --allow-empty -m "Empty commit triggered by schedule to refresh the server"
+        run: git commit --allow-empty -m "Empty commit triggered by scheduler to refresh the server"
 
       - name: Push empty commit
         uses: ad-m/github-push-action@v0.6.0
